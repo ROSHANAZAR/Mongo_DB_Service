@@ -4,12 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf build && rimraf package-lock.json",
-    "clean:ws": "npm run clean -ws",
-    "clean:all": "npm run clean && npm run clean -ws",
-    "build": "tsc",
-    "build:ws": "npm run build -ws",
-    "build:all": "npm run build -ws && npm run build",
+    "clean:build": "rimraf build && npm run clean -ws",
+    "clean:install": "rimraf package-lock.json &&rimraf node_modules",
+    "clean": "npm run clean:build && npm run clean:install",
+    "build": "npm run build -ws && tsc",
     "start": "node build/index.js"
   },
   "workspaces": [
