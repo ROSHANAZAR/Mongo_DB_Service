@@ -7,7 +7,7 @@ import { UpdateWriteOpResult }  from 'mongoose';
 import { DeleteResult } from 'mongoose';
 import { Mongo } from './Mongo';
 dotenv.config();
-export class MongoDB  {
+export class MongoDB implements Mongo {
     private connectionString: string;
     constructor(connectionString: string) {
        // Immediately initiate connection when an instance is created
