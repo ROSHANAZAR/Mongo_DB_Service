@@ -1,5 +1,15 @@
 import { app} from "./repository/App";
 
+app.addUser({
+    name: "Alice",
+    email: "alice@example.com",
+    age: 30
+}).then(user => {
+    console.log("Added User:", user)
+}).catch(err => {
+    console.error("Error adding user:", err);
+})
+
 // app.getAllUsers().then(users => {
 //     console.log("All Users:", users);
 // }).catch(err => {
