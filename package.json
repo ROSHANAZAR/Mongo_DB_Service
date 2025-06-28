@@ -1,0 +1,34 @@
+{
+  "name": "db-services-mongo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf build && rimraf package-lock.json",
+    "clean:ws": "npm run clean -ws",
+    "clean:all": "npm run clean && npm run clean -ws",
+    "build": "tsc",
+    "build:ws": "npm run build -ws",
+    "build:all": "npm run build -ws && npm run build",
+    "start": "node build/index.js"
+  },
+  "workspaces": [
+    "packages/mongo"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^24.0.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@typegoose/typegoose": "^12.16.0",
+    "dotenv": "^16.5.0",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.15.2",
+    "rimraf": "^6.0.1"
+  }
+}
